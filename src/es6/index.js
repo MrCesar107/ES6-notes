@@ -43,4 +43,16 @@ sin necesidad de concatenar varias cadenas de texto, como se hacia
 en ES5 o en versiones anteriores de JS.`;
 console.log(loremMultiline);
 
-// ------ String multi-line --------
+// ------ Destructuring --------
+
+// ES5 old style
+var person = {
+    'name': 'Cesar',
+    'age': 22,
+    'country': 'MX'
+};
+console.log(person.name, person.age, person.country);
+
+// ES6 new style
+let { name, age } = person; // Object person destructuring
+console.log(name, age);
