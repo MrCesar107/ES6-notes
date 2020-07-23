@@ -56,3 +56,45 @@ console.log(person.name, person.age, person.country);
 // ES6 new style
 let { name, age } = person; // Object person destructuring
 console.log(name, age);
+
+// ------ Spread operator --------
+
+// This feature was introduced in ES6+
+var team = ['Oscar', 'Cesar', 'Ricardo'];
+var team2 = ['Susana', 'Edna', 'Valeria'];
+
+let education = ['David', ...team, ...team2]; // Using spread operator '...'
+console.log(education);
+
+// ------ let, var and const --------
+
+// ES5 old style
+var variable = 1; // Declaring a global scope variable
+
+// ES6 new style
+let newVariable = 2; // Declaring a limited scope variable
+const PI = 3.1416; // Declaring a constant value
+
+// Notes: The main difference between var and let is that let has a 'scope'.
+// In JS or ES6 the scope is like a rule when you want use a variable.
+// For example, if you define a let variable in your file outside a block code
+// like a function or a conditional, thar varibale has 'global scope' and can be
+// used wherever in your code. If the variable is defined inside a block or
+// function, it has a local scope and it can only be used inside the block or
+// function. Const is a varibale that it's value can never be changed or re-
+// assigned. The const's scope can be only local.
+
+/*
+**************************************************
+**    KEYWORD      **  const  **  let  **  var  **
+**************************************************
+**  global scope   **   NO    **  NO   **  YES  **
+**************************************************
+**  function scope **   YES   **  YES  **  YES  **
+**************************************************
+**   block scope  **    YES   **  YES  **   NO  **
+**************************************************
+**     can be     **    NO    **  YES  **  YES  **
+**   reassinged   **          **       **       **
+**************************************************
+*/
