@@ -1,0 +1,12 @@
+{
+  "name": "es6-notes",
+  "version": "1.0.0",
+  "description": "ES6 notes",
+  "main": "index.js",
+  "author": "Cesar <cesar.rodriguez.lara54@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node src/es6/index.js"
+  }
+}
