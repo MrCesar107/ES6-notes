@@ -17,7 +17,7 @@ function newFunction(name = 'Cesar', age = 22, country = 'Mexico') {
 newFunction();
 newFunction('Rogelio', 40, 'Colombia'); // with parameters
 
-// ------ CONCATENATION --------
+// ------ CONCATENATION ------
 
 // ES5 old style
 let hello = 'Hello';
@@ -29,7 +29,7 @@ console.log(oldEpicPhrase);
 let newEpicPhrase = `${hello} ${world} in ES6 :D`; // Template literal
 console.log(newEpicPhrase);
 
-// ------ String multi-line --------
+// ------ String multi-line ------
 
 // ES5 old style
 var lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n'
@@ -43,7 +43,7 @@ sin necesidad de concatenar varias cadenas de texto, como se hacia
 en ES5 o en versiones anteriores de JS.`;
 console.log(loremMultiline);
 
-// ------ Destructuring --------
+// ------ Destructuring ------
 
 // ES5 old style
 var person = {
@@ -66,7 +66,7 @@ var team2 = ['Susana', 'Edna', 'Valeria'];
 let education = ['David', ...team, ...team2]; // Using spread operator '...'
 console.log(education);
 
-// ------ let, var and const --------
+// ------ let, var and const ------
 
 // ES5 old style
 var variable = 1; // Declaring a global scope variable
@@ -98,3 +98,90 @@ const PI = 3.1416; // Declaring a constant value
 **   reassinged   **          **       **       **
 **************************************************
 */
+
+// ------ Arrow funcionts, promises and object params ------
+
+let name = 'cesar';
+let age = 22;
+
+// ES5 old style
+let obj = { name: name, age: age };
+
+// ES6 new style
+let newObj = { name, edad };
+console.log(obj);
+console.log(newObj);
+
+// Arrow functions
+
+const names = [
+    { name: 'Oscar', age: 25 },
+    { name: 'Ricardo', age: 54 },
+];
+
+// ES5 old style
+let listOfNames = names.map(function(item) {
+    console.log(item.name);
+});
+
+// ES6 new style
+let newListOfNames = names.map(item => console.log(item.name)); // Arrow funcion
+const listOfNames3 = (name, age) => {
+    // code
+}
+const listOfNames4 = name => {
+    // code
+}
+const square =  num => num * num;
+
+// Promises
+
+const helloPromise = () => {
+    return new Promise((resolve, reject) => {
+        if(false)
+            resolve('Hey!');
+        else
+            reject('Ups!');
+    });
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    .catch(error => console.log(error));
+
+// ------ Classes, modules and generators ------
+
+class Calculator {
+    constructor() {
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+
+    sum(valueA, valueB) {
+        this.valueA = valueA;
+        this.valueB = valueB;
+
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new Calculator();
+console.log(calc.sum(2, 2));
+
+// Modules
+import hello from './module';
+hello();
+
+// Generators
+function* helloWorld() {
+    if(true)
+        yield 'Hello, ';
+
+    if(true)
+        yield 'world';
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value); // Undefined
